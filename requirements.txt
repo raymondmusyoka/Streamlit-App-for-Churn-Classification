@@ -1,0 +1,13 @@
+streamlit
+pandas
+numpy
+scikit-learn
+plotly
+matplotlib
+seaborn
+scipy
+gradio
+imbalanced-learn
+pytest
+joblib==1.4.2
+lightgbm

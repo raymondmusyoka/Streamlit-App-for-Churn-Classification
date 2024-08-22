@@ -1,0 +1,4 @@
+python -m venv Appvenv
+source Appvenv/Scripts/activate
+python -m pip install -q --upgrade pip
+python -m pip install -qr requirements.txt
