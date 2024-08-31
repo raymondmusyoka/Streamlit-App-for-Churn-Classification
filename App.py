@@ -1,59 +1,100 @@
+# Import necessary libraries
 import streamlit as st
-import pandas as pd
-import numpy as np
-import plotly as plt
-import Pages.dashboard as dashboard
-import Pages.data as data
 
-
-
+# Configure the page
 st.set_page_config(
-    page_title="Classification App",
-    page_icon=":hand:",
-    layout="wide"
+    page_title='Customer Churn Prediction App',
+    page_icon='👨‍💻',
+    layout='wide',
+    initial_sidebar_state='auto'
 )
 
-# Main Content
-st.title("Customer Churn Classification App")
-st.markdown(""" This is app uses machine learning to classify whether a customer will churn or not """)
-
-#Key Features
-st.subheader("key features")
+# Add custom CSS to adjust the width of the sidebar
 st.markdown("""
-            - Upload your csv file containing sales data
-            - Select the desire feature for classification
-            - Choose a machine learning model from the drop down menu
-            - Click 'Classify' to get  the predicted result
-            - The app also provide previous report on sales predictions
-            - The report includes matrics like accuracy, precision, recall and F1-Score
-          """)
+    <style> 
+        section[data-testid="stSidebar"] {
+            width: 200px !important;
+        }
+    </style> 
+""", unsafe_allow_html=True)
 
-# Menu
-st.subheader("App features")
-st.markdown("""
-- **View Data** : Access priority data
-- **Dashboard** : Explore interractive data visuals for insights
-""")
+def main():
+    st.header('Customer Churn Prediction App')
 
-# Machine Learning Integration
-st.subheader("Machine Learning Integration")
-st.markdown("""
-- **Model Selection**: Choose between two advanced models for accurte results
-- **Seamless Integration**: Integrate predictions into your workflow
-- **Probability Estimates**: Gain insights into the likelihoof of prediction                        
-""")
+    st.write(
+        """
+        Welcome to the **Customer Churn Prediction App**! Our app is designed to help businesses understand and predict customer churn using advanced data analysis and machine learning techniques.
+        """
+    )
 
-# Sidebar content
-st.sidebar.write("Need Help❓")
+    cols = st.columns(2)
 
-# Main page content
-st.markdown("# Contact and GitHub Repository")
+    # Churn Prediction Status
+    with cols[0]:
+        st.subheader('About the App')
+        st.write(
+            """
+            This application leverages historical data to predict the likelihood of customer churn. By analyzing customer demographics, subscription details, and account information, the app helps businesses:
+            
+            * Identify customers at risk of churning
+            * Understand factors influencing churn
+            * Implement strategies to retain valuable customers
+            
+            With a user-friendly interface and powerful predictive models, our app provides actionable insights to enhance customer retention strategies.
+            """
+        )
 
-# Contact information
-st.markdown("""
-For collaboration, contact me at [raymutati@gmail.com](mailto:raymutati@gmail.com)
-""")
+ # Application Features
+    with cols[0]:
+        st.subheader('Key Features')
+        st.markdown("""
+            * **Data View**: Explore and analyze customer data to gain insights into churn patterns.
+            * **Dashboard**: Visualize key metrics and trends through interactive charts and graphs.
+            * **Predict**: Use our predictive models to estimate the likelihood of customer churn based on various factors.
+            * **History**: Review past predictions and track changes over time.
+            """)
 
-# GitHub repository button
-if st.button("Repository on GitHub", help="Visit the GitHub repository"):
-    st.write("You can visit the repository at: [GitHub Repository Link](https://github.com/raymondmusyoka/Customer-Churn-Classification-Project.git)")
+    # Key Advantages
+    with cols[0]:
+        st.subheader('Why Use This App?')
+        st.markdown("""
+            * **Accurate Predictions**: Benefit from state-of-the-art machine learning models for reliable churn forecasts.
+            * **Intuitive Interface**: Navigate through a user-friendly interface designed for ease of use.
+            * **Actionable Insights**: Gain insights into customer behavior and retention strategies.
+            * **Continuous Improvement**: Regular updates and enhancements to keep up with the latest trends and technologies.
+            """)
+        
+        # How to Run the App
+    with cols[1]:
+        st.subheader('How to Get Started')
+        st.write("Follow these steps to run the Customer Churn Prediction App:")
+        st.code("""
+            # Activate your virtual environment
+            venv/Scripts/activate
+
+            # Run the Streamlit app
+            streamlit run app.py
+            """, language="python")
+
+    # Machine Learning Integration
+    with cols[1]:
+        st.subheader('Machine Learning Models')
+        st.write(
+            """
+            Our app integrates advanced machine learning models, including Gradient Boosting and Support Vector Machines (SVM). These models are trained on historical data to deliver accurate predictions and help businesses make informed decisions.
+            """)
+        
+        # Need Assistance
+    with cols[1]:
+        st.subheader('Need Help?')
+        st.write(
+            """
+            If you encounter any issues or have questions, please don't hesitate to reach out:
+            - **Email**: raymutati@gmail.com
+            - **GitHub**: [GitHub Repository](https://github.com/raymondmusyoka/Customer-Churn-Classification-Project.git)
+            - **LinkedIn**: [Connect on LinkedIn](http://www.linkedin.com/in/raymond-musyoka/)
+            """)
+
+if __name__ == '__main__':
+    main()
+

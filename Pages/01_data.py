@@ -8,7 +8,7 @@ st.write("Welcome to the data view page 📊")
 
 @st.cache_data(persist=True)
 def load_data():
-    data = pd.read_csv('Telco_churn_cleaned.csv')
+    data = pd.read_csv('data/Telco_churn_cleaned.csv')
     return data
 
 st.dataframe(load_data())
