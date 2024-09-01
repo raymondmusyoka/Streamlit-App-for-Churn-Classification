@@ -1,1 +1,1 @@
-# Streamlit-App-for-Churn-Classification
+# Churn Prediction Application 
